@@ -1,9 +1,10 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 import shutil
 
-app = FastAPI(title="Vault Storage System")
+app = FastAPI(title="Nexus Storage System")
 
 # Our simulated storage nodes
 NODES = {
@@ -23,7 +24,7 @@ for node in NODES:
 @app.get("/")
 def home():
     return {
-        "system": "VAULT",
+        "system": "NEXUS",
         "status": "online",
         "message": "Distributed storage system is running"
     }
