@@ -21,13 +21,6 @@ for node in NODES:
     (STORAGE / node).mkdir(parents=True, exist_ok=True)
 
 
-@app.get("/")
-def home():
-    return {
-        "system": "NEXUS",
-        "status": "online",
-        "message": "Distributed storage system is running"
-    }
 
 
 @app.get("/nodes")
@@ -133,3 +126,8 @@ def repair_file(filename: str):
         "new_replica": repair_node,
         "filename": filename
     }
+app.mount(
+    "/",
+    StaticFiles(directory=".", html=True),
+    name="frontend"
+)
