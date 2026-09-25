@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080b12;
+    color: white;
+}
+
+header {
+    height: 70px;
+    padding: 0 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #202532;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.status {
+    color: #7dff9b;
+    font-size: 13px;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #55ff7a;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+main {
+    width: 88%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero {
+    padding: 60px 0 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #7c8cff;
+}
+
+.hero p {
+    margin-top: 18px;
+    color: #9ca3b5;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.upload-btn {
+    background: #6c63ff;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.card,
+.node,
+.ai-section {
+    background: #10141e;
+    border: 1px solid #222938;
+    border-radius: 14px;
+}
+
+.card {
+    padding: 22px;
+}
+
+.card p {
+    color: #7d8598;
+    font-size: 12px;
+}
+
+.card h2 {
+    margin: 10px 0 4px;
+    font-size: 27px;
+}
+
+.card small,
+.node p {
+    color: #7d8598;
+}
+
+.healthy {
+    color: #5dff87;
+}
+
+.section {
+    margin-top: 45px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.section-title span {
+    color: #858da0;
+    font-size: 13px;
+}
+
+.nodes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.node {
+    padding: 22px;
+}
+
+.node-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.node-top h3 {
+    font-size: 16px;
+}
+
+.badge {
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+.online {
+    background: #12351f;
+    color: #65ff8b;
+}
+
+.offline {
+    background: #3b1515;
+    color: #ff6464;
+}
+
+.circle {
+    width: 90px;
+    height: 90px;
+    border: 5px solid #6c63ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px auto 12px;
+    font-weight: bold;
+}
+
+.node p {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.node button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px;
+    background: #1a1f2b;
+    color: #ff7777;
+}
+
+.node button:hover {
+    background: #35191c;
+}
+
+.activity {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.event {
+    padding: 16px;
+    background: #10141e;
+    border: 1px solid #222938;
+    border-radius: 10px;
+    display: flex;
+    gap: 14px;
+}
+
+.event.success > span {
+    color: #5dff87;
+}
+
+.event.warning > span {
+    color: #ffd45c;
+}
+
+.event b {
+    display: block;
+}
+
+.event small {
+    color: #7d8598;
+    display: block;
+    margin-top: 5px;
+}
+
+.repair-btn {
+    background: #17251c;
+    color: #65ff8b;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.ai-section {
+    padding: 25px;
+}
+
+.ai-title {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.ai-icon {
+    font-size: 30px;
+}
+
+.ai-title p {
+    color: #7d8598;
+    margin-top: 4px;
+}
+
+.ai-message {
+    margin-top: 20px;
+    padding: 18px;
+    background: #151b2a;
+    border-radius: 10px;
+    border-left: 3px solid #6c63ff;
+}
+
+.ai-message p {
+    color: #aeb5c5;
+    margin-top: 7px;
+}
+
+footer {
+    text-align: center;
+    padding: 50px 0 25px;
+    color: #555d6e;
+    font-size: 12px;
+}
+
+@media (max-width: 800px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stats,
+    .nodes {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+}

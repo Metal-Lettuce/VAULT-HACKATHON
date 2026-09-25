@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Distributed Storage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🛡️ NEXUS</div>
+        <div class="status">
+            <span class="dot"></span> SYSTEM ONLINE
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div>
+                <h1>Distributed Storage.<br><span>Built to Survive Failure.</span></h1>
+                <p>Fault-tolerant object storage with replication, integrity verification and automatic recovery.</p>
+            </div>
+
+            <button class="upload-btn" onclick="uploadFile()">
+                + Upload Object
+            </button>
+        </section>
+
+        <section class="stats">
+
+            <div class="card">
+                <p>STORAGE USED</p>
+                <h2>42.8 GB</h2>
+                <small>of 100 GB</small>
+            </div>
+
+            <div class="card">
+                <p>OBJECTS</p>
+                <h2 id="objectCount">127</h2>
+                <small>stored objects</small>
+            </div>
+
+            <div class="card">
+                <p>REPLICATION</p>
+                <h2>3×</h2>
+                <small>replication factor</small>
+            </div>
+
+            <div class="card">
+                <p>HEALTH</p>
+                <h2 class="healthy">98.7%</h2>
+                <small>system availability</small>
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="section-title">
+                <h2>Storage Nodes</h2>
+                <span>4 Nodes</span>
+            </div>
+
+            <div class="nodes">
+
+                <!-- NODE 1 -->
+
+                <div class="node" id="node1">
+
+                    <div class="node-top">
+                        <h3>NODE-01</h3>
+                        <span class="badge online">ONLINE</span>
+                    </div>
+
+                    <div class="circle">32%</div>
+
+                    <p>Storage Used</p>
+
+                    <button onclick="failNode(1)">
+                        Simulate Failure
+                    </button>
+
+                </div>
+
+
+                <!-- NODE 2 -->
+
+                <div class="node" id="node2">
+
+                    <div class="node-top">
+                        <h3>NODE-02</h3>
+                        <span class="badge online">ONLINE</span>
+                    </div>
+
+                    <div class="circle">61%</div>
+
+                    <p>Storage Used</p>
+
+                    <button onclick="failNode(2)">
+                        Simulate Failure
+                    </button>
+
+                </div>
+
+
+                <!-- NODE 3 -->
+
+                <div class="node" id="node3">
+
+                    <div class="node-top">
+                        <h3>NODE-03</h3>
+                        <span class="badge online">ONLINE</span>
+                    </div>
+
+                    <div class="circle">48%</div>
+
+                    <p>Storage Used</p>
+
+                    <button onclick="failNode(3)">
+                        Simulate Failure
+                    </button>
+
+                </div>
+
+
+                <!-- NODE 4 -->
+
+                <div class="node" id="node4">
+
+                    <div class="node-top">
+                        <h3>NODE-04</h3>
+                        <span class="badge">STANDBY</span>
+                    </div>
+
+                    <div class="circle">0%</div>
+
+                    <p>Repair Target</p>
+
+                    <button disabled>
+                        Waiting for Repair
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIVITY -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <h2>Recent Activity</h2>
+
+                <button
+                    class="repair-btn"
+                    onclick="repair()">
+                    ⚡ Repair Replicas
+                </button>
+
+                <button
+                    class="repair-btn"
+                    onclick="corruptReplica()">
+                    ⚠ Corrupt Replica
+                </button>
+
+            </div>
+
+
+            <div class="activity" id="activity">
+
+                <div class="event success">
+
+                    <span>✓</span>
+
+                    <div>
+                        <b>Object uploaded</b>
+                        <small>
+                            hackathon_demo.pdf replicated to 3 nodes
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="event success">
+
+                    <span>✓</span>
+
+                    <div>
+                        <b>Integrity verified</b>
+
+                        <small>
+                            SHA-256 checksum matched
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI -->
+
+        <section class="section ai-section">
+
+            <div class="ai-title">
+
+                <div class="ai-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h2>
+                        Nexus AI Assistant
+                    </h2>
+
+                    <p>
+                        Intelligent recovery analysis
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="ai-message"
+                id="aiMessage">
+
+                <b>
+                    ✓ System healthy
+                </b>
+
+                <p>
+                    All replicas are currently synchronized.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        NEXUS • Fault-Tolerant Distributed Object Storage
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
